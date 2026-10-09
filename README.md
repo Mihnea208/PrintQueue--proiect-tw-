@@ -32,4 +32,5 @@ Open index.html in a browser. No build step, no server.
 
 ## Status
 - [x] Stage 1: static mockup
-- [ ] Stage 2: data logic in JavaScript
+- [x] Stage 2: data logic in JavaScript
+- [ ] Stage 3: Vite and React project
