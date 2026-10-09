@@ -3,11 +3,14 @@ A 3D print management system to track and organize CAD prototypes.
 It helps lab students and engineers monitor print jobs.
 
 ## Data model
+## Data model
 | Field | Type | Notes |
 | --- | --- | --- |
 | part name | text | required, max 100 chars |
 | is printed | boolean | toggled from the list, default false |
-| material | fixed values | PLA, ABS, PETG |
+| material | fixed values | PLA, ABS, PETG, TPU, ASA, NYLON |
+| duration | number | estimated print time in hours |
+| weight | number | estimated material weight in grams |
 | project | relation | Robotics, Thesis, Research |
 | user | relation | the owner of the item (from week 11) |
 

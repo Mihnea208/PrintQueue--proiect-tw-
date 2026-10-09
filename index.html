@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PrintQueue - Mockup</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>PrintQueue</h1>
+    <p>Sistem de gestiune a prototipurilor trimise la imprimantele 3D din laborator.</p>
+    <p class="app-count">3 piese, dintre care 2 în așteptare</p>
+  </header>
+
+<main class="container">
+    <section class="panel">
+      <h2>Adaugă piesă</h2>
+      <form class="item-form">
+        <label>Nume piesă 
+          <input type="text" name="titlu" placeholder="Ex: Carcasă senzor" />
+        </label>
+        
+        <label>Material
+          <select name="material">
+            <option value="PLA">PLA</option>
+            <option value="ABS">ABS</option>
+            <option value="PETG">PETG</option>
+            <option value="TPU">TPU (Flexibil)</option>
+            <option value="ASA">ASA</option>
+            <option value="NYLON">Nylon</option>
+          </select>
+        </label>
+
+        <!-- Câmpuri noi adăugate -->
+        <label>Timp estimat (ore)
+          <input type="number" name="durata" placeholder="Ex: 5" min="0" step="0.5" />
+        </label>
+        
+        <label>Greutate estimată (grame)
+          <input type="number" name="gramaj" placeholder="Ex: 150" min="0" />
+        </label>
+
+        <button type="submit">Adaugă în coadă</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Coadă de printare</h2>
+      <ul class="item-list">
+        <!-- Card finalizat (are clasa "done") -->
+        <li class="item-card done">
+          <div>
+            <h3>Carcasă senzor proximitate v2</h3>
+            <span class="badge badge-pla">PLA</span>
+            <span class="detalii-print">⏱ 4.5 ore | ⚖️ 120g</span>
+          </div>
+          <span class="status">Printat</span>
+        </li>
+        <!-- Card în așteptare -->
+        <li class="item-card">
+          <div>
+            <h3>Angrenaj reductor planetar</h3>
+            <span class="badge badge-nylon">NYLON</span>
+            <span class="detalii-print">⏱ 12 ore | ⚖️ 300g</span>
+          </div>
+          <span class="status">În așteptare</span>
+        </li>
+        <!-- Card în așteptare -->
+        <li class="item-card">
+          <div>
+            <h3>Suport motor pas cu pas</h3>
+            <span class="badge badge-petg">PETG</span>
+            <span class="detalii-print">⏱ 2 ore | ⚖️ 45g</span>
+          </div>
+          <span class="status">În așteptare</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="app-footer">Proiect Tehnologii Web</footer>
+
+  <script src="piese.js"></script>
+</body>
+</html>
