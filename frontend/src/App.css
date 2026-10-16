@@ -10,7 +10,6 @@
   --accent-soft: #dbeafe;
   --border: #e5e7eb;
   
-  /* Culori specifice pentru materiale */
   --color-pla: #10b981;
   --color-abs: #f59e0b;
   --color-petg: #8b5cf6;
@@ -48,6 +47,7 @@ body {
 .app-count { opacity: 0.9; font-size: 0.9rem; }
 
 .container {
+  
   max-width: 1000px;
   margin: 24px auto;
   padding: 0 16px;
