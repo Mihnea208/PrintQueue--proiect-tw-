@@ -1,3 +1,5 @@
+import PiesaList from "./components/PiesaList.jsx";
+
 const piese = [
     { id: 1, titlu: "Carcasă senzor proximitate v2", printat: true, material: "PLA", durata: 4.5, gramaj: 120 },
     { id: 2, titlu: "Angrenaj reductor planetar", printat: false, material: "NYLON", durata: 12, gramaj: 300 },
@@ -19,8 +21,7 @@ export default function App() {
       <main className="container">
         <section className="panel">
           <h2>Coadă de printare</h2>
-          {/* Temporar: date brute; componentele apar în Etapa 4 */}
-          <pre>{JSON.stringify(piese, null, 2)}</pre>
+          <PiesaList piese={piese} />
         </section>
       </main>
     </>
