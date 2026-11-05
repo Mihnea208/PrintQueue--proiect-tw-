@@ -27,6 +27,7 @@ Details per stage:
 - Stage 1: see the `ai-log/etapa-01.md` file.
 - Stage 2: see the `ai-log/etapa-02.md` file.
 - Stage 3: see the `ai-log/etapa-03.md` file.
+- Stage 3: see the `ai-log/etapa-04.md` file.
 
 ## Stage 1: static mockup
 Static HTML/CSS mockup of the application. The files were moved to the `mockup/` folder.
@@ -37,13 +38,25 @@ Plain JavaScript, no DOM. `piese.js` in mockup holds the array and the functions
 ## Stage 3: Vite and React project
 The app now lives in `frontend/`, built with Vite. The data from stage 2 moved into the main component; the list is still printed raw.
 
+## Stage 4: components
+The list is rendered from the data, through two components:
+PiesaList receives the whole array and renders one card per item
+PiesaCard receives a single item through props and displays it
+
+## Stage 5: local state and events
+The list lives in React state. Checking and deleting work from the page, and the counters in the header follow automatically. A button in the header switches between light and dark mode. Changes are lost on refresh, which is what stage 6 and stage 10 fix.
+
 ## How to run
 cd frontend
 npm install
 npm run dev
 Then open the address printed in the terminal (http://localhost:5173).
 
+
 ## Status
 - [x] Stage 1: static mockup
 - [x] Stage 2: data logic in JavaScript
 - [x] Stage 3: Vite and React project
+- [x] Stage 4: components rendered from data
+- [x] Stage 5: local state and events
+- [ ] Stage 6: loading data from a mock API
