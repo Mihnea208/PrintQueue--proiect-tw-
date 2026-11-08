@@ -1,0 +1,9 @@
+{
+  "piese": [
+    { "id": 1, "titlu": "Carcasă senzor proximitate v2", "printat": true, "material": "PLA", "durata": 4.5, "gramaj": 120 },
+    { "id": 2, "titlu": "Angrenaj reductor planetar", "printat": false, "material": "NYLON", "durata": 12, "gramaj": 300 },
+    { "id": 3, "titlu": "Suport motor pas cu pas", "printat": false, "material": "PETG", "durata": 2, "gramaj": 45 },
+    { "id": 4, "titlu": "Brat robotic articulație A", "printat": false, "material": "ABS", "durata": 8.5, "gramaj": 250 },
+    { "id": 5, "titlu": "Carcasă telecomandă", "printat": true, "material": "TPU", "durata": 3, "gramaj": 80 }
+  ]
+}

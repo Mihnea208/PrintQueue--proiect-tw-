@@ -224,3 +224,12 @@ body {
   cursor: pointer;
 }
 .btn-danger:hover { background: #ef4444; color: #fff; }
+/* Etapa 6: stări de încărcare și eroare */
+.info { color: var(--muted); }
+.error {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
