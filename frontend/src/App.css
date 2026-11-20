@@ -233,3 +233,41 @@ body {
   border-radius: 8px;
   padding: 10px 12px;
 }
+
+.container {
+  grid-template-columns: 1fr 2fr;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.task-form input,
+.task-form select {
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 400;
+  background: var(--card);
+  color: var(--text);
+}
+
+.task-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.task-form input[aria-invalid="true"] {
+  border-color: #ef4444;
+}

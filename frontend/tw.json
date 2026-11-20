@@ -1,0 +1,10 @@
+{
+  "resource": "piese",
+  "title": "titlu",
+  "done": "printat",
+  "sample": {
+    "material": "PLA",
+    "durata": 3,
+    "gramaj": 100
+  }
+}

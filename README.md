@@ -51,6 +51,10 @@ The list is served by json-server from db.json. The app fetches it on load and s
 npm run api  # terminal 1, http://localhost:3001
 npm run dev  # terminal 2, http://localhost:5173
 
+## Stage 7: form and validation
+Parts can be added from the page. The form is controlled and validated, and every change (add, toggle, delete) goes to the API before it shows up in the list.
+
+
 ## How to run
 cd frontend
 npm install
@@ -65,3 +69,5 @@ Then open the address printed in the terminal (http://localhost:5173).
 - [x] Stage 4: components rendered from data
 - [x] Stage 5: local state and events
 - [x] Stage 6: loading data from a mock API
+- [x] Stage 7: form and validation
+- [ ] Stage 8: routing and detail page

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import PiesaList from "./components/PiesaList.jsx";
-import { fetchPiese } from "./api.js";
+import PiesaForm from "./components/PiesaForm.jsx";
+import { createPiesa, deletePiesa, fetchPiese, updatePiesa } from "./api.js";
 
 function temaInitiala() {
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 }
 
 export default function App() {
@@ -28,12 +29,28 @@ export default function App() {
     return () => { ignore = true; };
   }, []);
 
-  function handleToggle(id) {
-    setPiese((prev) => prev.map((p) => (p.id === id ? { ...p, printat: !p.printat } : p)));
+  async function handleAdd(piesa) {
+    const creata = await createPiesa(piesa);
+    setPiese((prev) => [...prev, creata]);
   }
 
-  function handleDelete(id) {
-    setPiese((prev) => prev.filter((p) => p.id !== id));
+  async function handleToggle(id) {
+    const piesa = piese.find((p) => p.id === id);
+    try {
+      const actualizata = await updatePiesa(id, { printat: !piesa.printat });
+      setPiese((prev) => prev.map((p) => (p.id === id ? actualizata : p)));
+    } catch (err) {
+      setError(err.message);
+    }
+  }
+
+  async function handleDelete(id) {
+    try {
+      await deletePiesa(id);
+      setPiese((prev) => prev.filter((p) => p.id !== id));
+    } catch (err) {
+      setError(err.message);
+    }
   }
 
   function handleTema() {
@@ -56,17 +73,26 @@ export default function App() {
       </header>
       <main className="container">
         <section className="panel">
+          <h2>Adaugă piesă</h2>
+          <PiesaForm onAdd={handleAdd} />
+        </section>
+
+        <section className="panel">
           <h2>Coadă de printare</h2>
-          
-          {loading && <p className="info">Se încarcă lista de piese...</p>}
-          
+
+          {loading && (
+            <p className="info" data-testid="loading">
+              Se încarcă lista de piese...
+            </p>
+          )}
+
           {error && (
-            <p className="error">
+            <p className="error" data-testid="error">
               Nu am putut încărca datele: {error}. Rulează <code>npm run api</code>?
             </p>
           )}
-          
-          {!loading && !error && (
+
+          {!loading && (
             <PiesaList piese={piese} onToggle={handleToggle} onDelete={handleDelete} />
           )}
         </section>
