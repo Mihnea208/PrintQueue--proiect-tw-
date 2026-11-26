@@ -29,3 +29,6 @@ export function updatePiesa(id, changes) {
 export function deletePiesa(id) {
   return request(`/piese/${id}`, { method: "DELETE" });
 }
+export function fetchPiesa(id) {
+  return request(`/piese/${id}`);
+}

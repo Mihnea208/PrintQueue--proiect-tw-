@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f4f5f7;
+  --card: #ffffff;
+  --text: #1f2933;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --accent-dark: #1d4ed8;
+  --accent-soft: #dbeafe;
+  --border: #e5e7eb;
+  --mare: #ef4444;
+
+  --color-pla: #10b981;
+  --color-abs: #f59e0b;
+  --color-petg: #8b5cf6;
+  --color-tpu: #ec4899;
+  --color-asa: #ef4444;
+  --color-nylon: #64748b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14121d;
+    --card: #1e1b2e;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --border: #352f4d;
+    --accent: #3b82f6;
+    --accent-soft: #1e3a8a;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #14121d;
+  --card: #1e1b2e;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: #352f4d;
+  --accent: #3b82f6;
+  --accent-soft: #1e3a8a;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.panel h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.info {
+  color: var(--muted);
+}
+
+.empty {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.error {
+  color: var(--mare);
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.btn {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--accent-dark);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-danger {
+  border: 1px solid var(--mare);
+  background: transparent;
+  color: var(--mare);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+  background: var(--mare);
+  color: #fff;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.badge-pla { background: var(--color-pla); }
+.badge-abs { background: var(--color-abs); }
+.badge-petg { background: var(--color-petg); }
+.badge-tpu { background: var(--color-tpu); }
+.badge-asa { background: var(--color-asa); }
+.badge-nylon { background: var(--color-nylon); }
