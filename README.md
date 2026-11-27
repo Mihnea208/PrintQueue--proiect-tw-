@@ -57,12 +57,13 @@ Parts can be added from the page. The form is controlled and validated, and ever
 ## Stage 8: routing and detail page
 Three pages behind React Router: the list, a detail page at `/piese/:id`, and an about page, plus a 404 page. Component styles moved to CSS Modules.
 
+## Stage 9: own backend
+json-server is gone. The API is an Express server in `backend/`, with REST routes, server-side validation and CORS. Data is still kept in memory and resets on restart.
 
-## How to run
-cd frontend
-npm install
-npm run dev
-Then open the address printed in the terminal (http://localhost:5173).
+# How to run
+```bash
+cd backend && npm install && npm run dev
+cd frontend && npm install && npm run dev
 
 
 ## Status
@@ -74,4 +75,5 @@ Then open the address printed in the terminal (http://localhost:5173).
 - [x] Stage 6: loading data from a mock API
 - [x] Stage 7: form and validation
 - [x] Stage 8: routing and detail page
-- [ ] Stage 9: own backend with Express
+- [x] Stage 9: own backend with Express
+- [ ] Stage 10: MariaDB and full CRUD

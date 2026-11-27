@@ -6,13 +6,8 @@ async function request(path, options = {}) {
     headers: { "Content-Type": "application/json", ...options.headers },
   });
   if (!res.ok) {
-    throw new Error(`Eroare server: ${res.status}`);
-  }
-  return res.status === 204 ? null : res.json();
-}
-
-export function fetchPiese() {
-  return request("/piese");
+    const body = await res.json().catch(() => ({}));
+    throw new Error(body.error || `Eroare server: ${res.status}`); } return res.status === 204 ? null : res.json(); }  export function fetchPiese() { return request("/piese"); }  export function fetchPiesa(id) { return request(`/piese/${id}`);
 }
 
 export function createPiesa(piesa) {
@@ -20,15 +15,5 @@ export function createPiesa(piesa) {
 }
 
 export function updatePiesa(id, changes) {
-  return request(`/piese/${id}`, {
-    method: "PATCH",
-    body: JSON.stringify(changes),
-  });
-}
-
-export function deletePiesa(id) {
-  return request(`/piese/${id}`, { method: "DELETE" });
-}
-export function fetchPiesa(id) {
-  return request(`/piese/${id}`);
+  return request(`/piese/${id}`, { method: "PATCH", body: JSON.stringify(changes), }); }  export function deletePiesa(id) { return request(`/piese/${id}`, { method: "DELETE" });
 }

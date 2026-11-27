@@ -41,7 +41,6 @@ export default function PiesaDetaliuPage() {
       </section>
     );
   }
-
   return (
     <section className={`panel ${styles.detail}`} data-testid="detail">
       <Link to="/" className={styles.back}>

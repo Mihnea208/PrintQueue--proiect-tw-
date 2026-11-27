@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { MATERIALE } from "../constants.js";
+import styles from "./PiesaForm.module.css";
 
-const MATERIALE = ["PLA", "ABS", "PETG", "TPU", "ASA", "NYLON"];
 const TITLU_MAX = 100;
 
 export default function PiesaForm({ onAdd }) {
@@ -50,7 +51,7 @@ export default function PiesaForm({ onAdd }) {
   }
 
   return (
-    <form className="task-form" onSubmit={handleSubmit} noValidate data-testid="form">
+    <form className={styles.form} onSubmit={handleSubmit} noValidate data-testid="form">
       <label>
         Titlu piesă
         <input
@@ -106,7 +107,7 @@ export default function PiesaForm({ onAdd }) {
         </p>
       )}
 
-      <button type="submit" disabled={trimite} data-testid="form-submit">
+      <button type="submit" className="btn" disabled={trimite} data-testid="form-submit">
         {trimite ? "Se salvează..." : "Adaugă piesă"}
       </button>
     </form>
